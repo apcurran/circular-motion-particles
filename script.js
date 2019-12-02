@@ -2,7 +2,7 @@
 
 const animation = (() => {
     const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: false });
 
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight;
@@ -35,7 +35,7 @@ const animation = (() => {
     function init() {
         particleArr = [];
         for (let i = 0; i < 500; i++) {
-            let moveRadius = Math.floor(Math.random() * canvas.width);
+            let moveRadius = Math.floor(Math.random() * canvas.width + 25);
             let step = (Math.random() * 0.002) + 0.002;
             let pos = Math.floor(Math.random() * (Math.PI * 2));
             let size = Math.floor(Math.random() * 8 + 0.5);
