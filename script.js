@@ -1,6 +1,7 @@
 "use strict";
 
-const animation = (() => {
+// Bare code block used as an alternative to an IIFE, to protect from the global scope
+{
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d", { alpha: false });
 
@@ -76,4 +77,4 @@ const animation = (() => {
     animate();
     window.onresize = resize;
 
-})();
+}
